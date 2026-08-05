@@ -1,0 +1,311 @@
+/* ────────────────────────────────────────────────────────────────
+   RABIA TASKEEN — PORTFOLIO
+   Design concept: "Inventory Ledger" — she spends her days building
+   storefronts, tagging products, and keeping catalogs in order, so
+   the site itself is styled like a boutique's stockroom: swing
+   tags, punch holes, twine, stamped ink, and ruled ledger lines.
+   Palette: black canvas, white paper/text, a single hint of gold —
+   a premium, high-trust agency look for a Shopify/web specialist.
+   ──────────────────────────────────────────────────────────────── */
+
+:root {
+  /* canvas — true black, premium and quiet */
+  --ink: #060605;
+  --ink-soft: #0d0d0b;
+  --ink-raised: #151513;
+  --ink-line: rgba(201, 164, 76, 0.16);
+  --ink-line-soft: rgba(255, 255, 255, 0.06);
+
+  /* paper — the "white" half of the palette, used on cards */
+  --paper: #f7f5ee;
+  --paper-soft: #efece1;
+  --paper-line: #d9d4c2;
+  --ink-on-paper: #14130f;
+  --dim-on-paper: #6b6558;
+
+  /* text on ink */
+  --chalk: #f6f4ee;
+  --sage: #a8a49a;
+  --sage-dim: #6b675d;
+
+  /* accent — a single hint of gold, no second accent color */
+  --brass: #c9a44c;
+  --brass-soft: #e8ce93;
+  --brass-dim: #8a7233;
+  --stamp: #c9a44c;
+  --stamp-soft: #e8ce93;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', 'SFMono-Regular', monospace;
+
+  --radius: 4px;
+  --max-w: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--chalk);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle, var(--ink-line-soft) 1px, transparent 1px),
+    radial-gradient(circle at 12% -10%, rgba(201, 164, 76, 0.12), transparent 45%),
+    radial-gradient(circle at 88% 8%, rgba(201, 164, 76, 0.07), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(201, 164, 76, 0.05), transparent 55%);
+  background-size: 26px 26px, auto, auto, auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass-soft);
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── tag / eyebrow label — a stub of kraft tag stitched to the section ── */
+.tag-label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-on-paper);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brass-soft);
+  padding: 5px 12px 5px 10px;
+  border-radius: 2px 8px 8px 2px;
+  position: relative;
+}
+
+.tag-label::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink);
+  flex-shrink: 0;
+  animation: dotPulse 2.4s ease-in-out infinite;
+}
+
+.section {
+  padding: 104px 0;
+  border-bottom: 1px solid var(--ink-line-soft);
+  position: relative;
+}
+
+.section-head {
+  margin-bottom: 48px;
+  max-width: 640px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.6vw, 44px);
+  font-weight: 600;
+  margin: 16px 0 0;
+  letter-spacing: -0.01em;
+  color: var(--chalk);
+}
+
+.section-sub {
+  color: var(--sage);
+  font-size: 16px;
+  margin-top: 16px;
+  line-height: 1.65;
+}
+
+/* ── buttons ── */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  padding: 13px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--ink-line);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  background: transparent;
+  color: var(--chalk);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--sage-dim);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--ink);
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s var(--ease);
+}
+
+.btn-primary:hover::before {
+  left: 130%;
+}
+
+.btn-primary:hover {
+  background: var(--brass-soft);
+  border-color: var(--brass-soft);
+  box-shadow: 0 10px 32px -10px rgba(201, 164, 76, 0.55);
+}
+
+.btn-ghost {
+  color: var(--sage);
+  border-color: var(--ink-line);
+}
+
+.btn-ghost:hover {
+  color: var(--chalk);
+}
+
+/* ── scroll-reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .tag-swing,
+  .tag-swing * {
+    animation: none !important;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-2.2deg); }
+  50% { transform: rotate(2.2deg); }
+}
+
+@keyframes stampPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes shimmerText {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes goldGlint {
+  0% { transform: translateX(-140%) translateY(-140%) rotate(35deg); }
+  38%, 100% { transform: translateX(140%) translateY(140%) rotate(35deg); }
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 164, 76, 0.4); }
+  50% { box-shadow: 0 0 0 5px rgba(201, 164, 76, 0); }
+}
+
+/* shimmering gold display text */
+.shimmer-text {
+  background: linear-gradient(90deg, var(--chalk) 20%, var(--brass-soft) 40%, var(--brass) 50%, var(--brass-soft) 60%, var(--chalk) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerText 6s linear infinite;
+}
+
+/* small gold sparkle particle */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--brass-soft);
+  box-shadow: 0 0 6px 1px rgba(243, 212, 136, 0.8);
+  animation: sparkleTwinkle 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-text {
+    animation: none;
+    -webkit-text-fill-color: var(--chalk);
+    background: none;
+  }
+  .sparkle,
+  .tag-glint {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 68px 0;
+  }
+}
