@@ -16,7 +16,7 @@ export default function Footer() {
 
         <div className="footer-right">
           <div className="footer-icons">
-            <IconLink href={`mailto:${profile.email}`} icon={<Mail size={16} />} label="Email" />
+            <IconLink href={`mailto:${profile.socials.email}`} icon={<Mail size={16} />} label="Email" />
             {profile.socials.github !== '#' && (
               <IconLink href={profile.socials.github} icon={<Github size={16} />} label="GitHub" />
             )}
