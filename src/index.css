@@ -75,7 +75,7 @@ body {
     linear-gradient(rgba(230, 179, 61, 15%) 1px, transparent 1px);
   background-size: 100% 32px;
   background-position: 0 6px;
-   overflow: hidden;
+   overflow-x: hidden !important;
 }
 
 img {
