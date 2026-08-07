@@ -130,8 +130,8 @@ export default function Hero() {
           </svg>
 
           {/* stars, grouped on the opposite side */}
-          <Star className="doodle" size={22} style={{ top: '-7%', right: '0%', animationDelay: '0.9s' }} fill="var(--brass)" />
-          <Star className="doodle" size={12} style={{ top: '8%', right: '-8%', animationDelay: '1.6s' }} fill="var(--brass)" />
+          <Star className="doodle" size={22} style={{ top: '-7%', right: '7%', animationDelay: '0.9s' }} fill="var(--brass)" />
+          <Star className="doodle" size={12} style={{ top: '8%', right: '-4%', animationDelay: '1.6s' }} fill="var(--brass)" />
           <Sparkle className="doodle" size={16} style={{ bottom: '6%', right: '-6%', animationDelay: '2s' }} />
 
           <div className="note-card">
