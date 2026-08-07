@@ -147,7 +147,7 @@ a {
 @media (max-width: 620px) {
   :root { --spine-w: 18px; }
   .spine-ring { width: 8px; height: 8px; }
-  .notebook-spine { gap: 14px; padding: 16px 0; }
+  .notebook-spine { gap: 24px; padding: 16px 0; }
 }
 
 /* ── pill tab — the hand-labelled sticky note used as a section eyebrow ── */
