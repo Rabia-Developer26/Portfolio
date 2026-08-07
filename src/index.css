@@ -368,5 +368,5 @@ a {
 }
 
 @media (max-width: 720px) {
-  .section { padding: 64px 0; }
+  .section { padding: 50px 0; }
 }
