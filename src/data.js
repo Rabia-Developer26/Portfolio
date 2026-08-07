@@ -28,8 +28,8 @@ export const profile = {
   summary:
     "Creative and detail-oriented Shopify Theme Developer and Frontend Web Developer with hands-on experience building responsive, user-friendly, and visually engaging websites. Skilled in Shopify theme customization, HTML, CSS, JavaScript, Bootstrap, and Tailwind CSS. Experienced in converting Figma designs into pixel-perfect websites and optimizing stores for performance, SEO, and user experience.",
   socials: {
-    github: '#',
-    linkedin: '#',
+    github: 'https://github.com/Rabia-Developer26',
+    linkedin: 'www.linkedin.com/in/rabia-taskeen-7797b51b0',
     instagram: '#',
     upwork: '#',
     fiverr: '#',
