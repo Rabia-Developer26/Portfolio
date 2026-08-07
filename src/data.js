@@ -30,6 +30,7 @@ export const profile = {
   socials: {
     github: 'https://github.com/Rabia-Developer26',
     linkedin: 'www.linkedin.com/in/rabia-taskeen-7797b51b0',
+    email: 'rabiaiqbal1256@gmail.com',
     instagram: '#',
     upwork: '#',
     fiverr: '#',
